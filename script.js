@@ -4,8 +4,11 @@ let jumlahMaksSoal = 100; // nilai awal default, nanti ditimpa
 const subkategoriMap = {
   KataKerja: {
     'Bentuk Kata Kerja': 'data/KataKerja/KataKerjaN4Perubahan.js',
+    'Bentuk Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PerubahanNihongonice.js',
     'Arti Kata Kerja': 'data/KataKerja/KataKerjaN4Arti.js',
-    'Pilihan Ganda Kata Kerja': 'data/KataKerja/KataKerjaN4PilihanGanda.js'
+    'Arti Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4ArtiNihongonice.js',
+    'Pilihan Ganda Kata Kerja': 'data/KataKerja/KataKerjaN4PilihanGanda.js',
+    'Pilihan Ganda Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PilihanGandaNihongonice.js'
   },
   KataSifat: {
     'Arti Kata Sifat': 'data/KataSifat/I_KeIndonesia.js'
