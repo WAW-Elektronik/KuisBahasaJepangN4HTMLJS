@@ -80,6 +80,7 @@ function setMaxJumlah() {
 function mulaiKuis() {
   const jumlah = parseInt(document.getElementById('jumlahSoal').value);
   const pathFile = document.getElementById('kategoriSub').value;
+  const acak = document.getElementById('acakSoal').checked;
   const kuis = document.getElementById('kuisContainer');
   kuis.innerHTML = '';
   document.getElementById('skor').innerText = '';
@@ -94,33 +95,45 @@ function mulaiKuis() {
   delete window.soalKuisArti;
   delete window.questions;
 
-
-  // Pastikan ulang soal sesuai file
   const existingScripts = document.querySelectorAll('script[src^="data/"]');
   existingScripts.forEach(s => s.remove());
 
   const script = document.createElement('script');
-  script.src = pathFile + '?v=' + Date.now(); // Hindari cache
+  script.src = pathFile + '?v=' + Date.now();
   script.onload = () => {
-  // Soal bentuk
-  if (window.soalKuis && 'bentukTe' in window.soalKuis[0]) {
-    soalDipilih = [...window.soalKuis].sort(() => 0.5 - Math.random()).slice(0, jumlah);
-    tampilkanSoalBentuk(kuis);
+    const ambilSoal = (arr) => {
+  const salin = [...arr];
 
-  // Soal arti (dengan { pertanyaan, jawaban })
-  } else if (window.soalKuisArti && 'jawaban' in window.soalKuisArti[0]) {
-    soalDipilih = [...window.soalKuisArti].sort(() => 0.5 - Math.random()).slice(0, jumlah);
-    tampilkanSoalArti(kuis);
-
-  // Soal pilihan ganda
-  } else if (window.questions && 'opsi' in window.questions[0]) {
-    soalDipilih = [...window.questions].sort(() => 0.5 - Math.random()).slice(0, jumlah);
-    tampilkanSoalPilihanGanda(kuis);
-
+  if (acak) {
+    return salin.sort(() => 0.5 - Math.random()).slice(0, jumlah);
   } else {
-    alert("Struktur soal tidak dikenali.");
+    const mulai = parseInt(document.getElementById('soalMulai').value) - 1;
+    const akhir = parseInt(document.getElementById('soalAkhir').value);
+    if (mulai < 0 || akhir > arr.length || mulai >= akhir) {
+      alert(`Rentang soal tidak valid. Harus antara 1 sampai ${arr.length}.`);
+      return [];
+    }
+    return salin.slice(mulai, akhir);
   }
 };
+
+    if (window.soalKuis && 'bentukTe' in window.soalKuis[0]) {
+      soalDipilih = ambilSoal(window.soalKuis);
+      tampilkanSoalBentuk(kuis);
+
+    } else if (window.soalKuisArti && 'jawaban' in window.soalKuisArti[0]) {
+      soalDipilih = ambilSoal(window.soalKuisArti);
+      tampilkanSoalArti(kuis);
+
+    } else if (window.questions && 'opsi' in window.questions[0]) {
+      soalDipilih = ambilSoal(window.questions);
+      tampilkanSoalPilihanGanda(kuis);
+
+    } else {
+      alert("Struktur soal tidak dikenali.");
+    }
+  };
+
   document.body.appendChild(script);
 }
 
@@ -415,3 +428,4 @@ document.getElementById('jumlahSoal').addEventListener('input', function () {
     this.value = max;
   }
 });
+
