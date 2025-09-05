@@ -6,6 +6,8 @@ const subkategoriMap = {
     'Bentuk Kata Kerja': 'data/KataKerja/KataKerjaN4Perubahan.js',
     'Bentuk Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PerubahanNihongonice.js',
     'Arti Kata Kerja': 'data/KataKerja/KataKerjaN4Arti.js',
+    'Arti ke Hiragana Kata Kerja': 'data/KataKerja/KataKerjaN4ArtiHiragana.js',
+    'Arti ke Kanji Kata Kerja': 'data/KataKerja/KataKerjaN4ArtiKanji.js',
     'Arti Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4ArtiNihongonice.js',
     'Pilihan Ganda Kata Kerja': 'data/KataKerja/KataKerjaN4PilihanGanda.js',
     'Pilihan Ganda Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PilihanGandaNihongonice.js'
@@ -77,6 +79,22 @@ function setMaxJumlah() {
   document.getElementById('jumlahSoal').value = jumlahMaksSoal;
 }
 
+function tampilkanInformasi() {
+  const dialog = document.getElementById("dialogInformasi");
+  if (dialog) {
+    dialog.showModal();
+  } else {
+    alert("Dialog informasi tidak ditemukan.");
+  }
+}
+
+function tutupInformasi() {
+  const dialog = document.getElementById("dialogInformasi");
+  if (dialog) {
+    dialog.close();
+  }
+}
+
 function mulaiKuis() {
   const jumlah = parseInt(document.getElementById('jumlahSoal').value);
   const pathFile = document.getElementById('kategoriSub').value;
@@ -108,7 +126,7 @@ function mulaiKuis() {
     return salin.sort(() => 0.5 - Math.random()).slice(0, jumlah);
   } else {
     const mulai = parseInt(document.getElementById('soalMulai').value) - 1;
-    const akhir = parseInt(document.getElementById('soalAkhir').value);
+    const akhir = parseInt(document.getElementById('soalAkhir').value) - (parseInt(document.getElementById('soalAkhir').value) - parseInt(document.getElementById('jumlahSoal').value));
     if (mulai < 0 || akhir > arr.length || mulai >= akhir) {
       alert(`Rentang soal tidak valid. Harus antara 1 sampai ${arr.length}.`);
       return [];
@@ -143,17 +161,17 @@ function tampilkanSoalBentuk(kuis) {
     div.className = 'question';
     div.innerHTML = `
       <b>${i + 1}. ${soal.pertanyaan}</b><br><br>
-      ${generateField(i, "bentukTe", "~て")}
-      ${generateField(i, "bentukTa", "~た")}
-      ${generateField(i, "bentukU", "~う")}
-      ${generateField(i, "bentukMasu", "~ます")}
-      ${generateField(i, "bentukNai", "~ない")}
-      ${generateField(i, "bentukVolitional", "~よう")}
-      ${generateField(i, "bentukImperative", "命令形")}
-      ${generateField(i, "bentukConditional", "仮定形")}
+      ${generateFieldBentuk(i, "bentukTe", "~て")}
+      ${generateFieldBentuk(i, "bentukTa", "~た")}
+      ${generateFieldBentuk(i, "bentukU", "~う")}
+      ${generateFieldBentuk(i, "bentukMasu", "~ます")}
+      ${generateFieldBentuk(i, "bentukNai", "~ない")}
+      ${generateFieldBentuk(i, "bentukVolitional", "~よう")}
+      ${generateFieldBentuk(i, "bentukImperative", "命令形")}
+      ${generateFieldBentuk(i, "bentukConditional", "仮定形")}
       <button onclick="periksaSatu(${i})">Cek Semua Bentuk (Soal Ini)</button>
       <div id="hasil-${i}"></div>
-    `;
+    `;//<div id="keyboard-container-${id}-${i}"></div> --> untuk menampilkan keyboard di soal bentuk (ada di generateFieldBentuk) 
     kuis.appendChild(div);
   });
 }
@@ -167,7 +185,8 @@ function tampilkanSoalArti(kuis) {
       <textarea id="arti-${i}" onfocus="showKeyboardOptions(this, 'arti', ${i})"></textarea>
       <button onclick="cekArti(${i})">Cek</button>
       <span id="feedback-arti-${i}"></span>
-    `;
+      <div id="keyboard-container-arti-${i}"></div>
+    `;//<div id="keyboard-container-arti-${i}"></div> --> untuk menampilkan keyboard di soal arti
     kuis.appendChild(div);
   });
 }
@@ -191,7 +210,7 @@ function cekPilihanGanda(i, jawaban_index) {
 }
 
 
-function generateField(i, bentuk, label) {
+function generateFieldBentuk(i, bentuk, label) {
   const id = getFieldIdFromBentuk(bentuk);
   return `
     <label>${label}: 
@@ -275,19 +294,6 @@ function periksaJawaban() {
 
   document.getElementById('skor').innerText = `Total Skor: ${total} / ${maks}`;
 }
-
-/*function cekPerBentuk() {
-  const bentuk = document.getElementById('bentukCek').value;
-  let benar = 0;
-
-  soalDipilih.forEach((soal, i) => {
-    const id = getFieldIdFromBentuk(bentuk);
-    const input = document.getElementById(`${id}-${i}`).value.trim();
-    if (input === soal[bentuk]) benar++;
-  });
-
-  alert(`Benar untuk ${bentuk}: ${benar} / ${soalDipilih.length}`);
-}*/
 
 function getFieldIdFromBentuk(bentuk) {
   return {
