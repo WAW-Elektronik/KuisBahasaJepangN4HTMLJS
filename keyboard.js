@@ -20,7 +20,7 @@ function showKeyboardOptions(textarea, fieldId, index) {
           <button onclick="removeKeyboard('${containerId}')">❌</button>
         </div>
         <div class="keyboard-box" id="${containerId}-box"
-             style="max-width: 600px; max-height: 150px; display:flex; flex-wrap:wrap; overflow-y:auto; background:#fff; padding:4px;">
+             style="max-width: 500px; max-height: 200px; display:flex; flex-wrap:wrap; overflow-y:auto; background:#fff; padding:4px;">
         </div>
 
       </div>
@@ -61,3 +61,4 @@ function removeKeyboard(containerId) {
 //     div.innerHTML = '';
 //   });
 // }
+
