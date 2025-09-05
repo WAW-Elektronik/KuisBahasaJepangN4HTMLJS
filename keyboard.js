@@ -11,7 +11,7 @@ function showKeyboardOptions(textarea, fieldId, index) {
   if (!container.hasChildNodes()) { // only create container if it doesn't exist
     container.style.position = "relative";
     container.innerHTML = `
-      <div style="position:absolute; right:0; top:0; background:#f0f0f0; border:1px solid #ccc; padding:6px; z-index:10;">
+      <div style="position:absolute; left:0; top:0; background:#f0f0f0; border:1px solid #ccc; padding:6px; z-index:10;">
         <div style="margin-bottom:5px;">
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'hiragana')">Hiragana</button>
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'katakana')">Katakana</button>
@@ -58,3 +58,4 @@ function removeKeyboard(containerId) {
 //     div.innerHTML = '';
 //   });
 // }
+
