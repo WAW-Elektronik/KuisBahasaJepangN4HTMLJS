@@ -12,14 +12,17 @@ function showKeyboardOptions(textarea, fieldId, index) {
     container.style.position = "relative";
     container.innerHTML = `
       <div style="position:absolute; left:0; top:0; background:#f0f0f0; border:1px solid #ccc; padding:6px; z-index:10;">
-        <div style="margin-bottom:5px;">
+        <div style="display:flex; gap:4px; flex-wrap:wrap;">
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'hiragana')">Hiragana</button>
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'katakana')">Katakana</button>
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'kanjiN5')">KanjiN5</button>
           <button onclick="loadKeyboard('${containerId}', '${textarea.id}', 'kanjiN4')">KanjiN4</button>
           <button onclick="removeKeyboard('${containerId}')">❌</button>
         </div>
-        <div class="keyboard-box" id="${containerId}-box" style="max-width: 250px; display:flex; flex-wrap:wrap;"></div>
+        <div class="keyboard-box" id="${containerId}-box"
+             style="max-width: 600px; max-height: 150px; display:flex; flex-wrap:wrap; overflow-y:auto; background:#fff; padding:4px;">
+        </div>
+
       </div>
     `;
   }
@@ -58,4 +61,3 @@ function removeKeyboard(containerId) {
 //     div.innerHTML = '';
 //   });
 // }
-
