@@ -1,5 +1,5 @@
-const hiragana = 'あいうえおかきくけこさしすせそたちつてとなにぬねのまみむめもやゆよらりるれろわをんゃゅょっー';
-const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノマミムメモヤユヨラリルレロワヲンャュョッー';
+const hiragana = 'あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどはひふへほばびぶべぼぱぴぷぺぽなにぬねのまみむめもやゆよらりるれろやゆよわをんゃゅょっー';
+const katakana = 'アイウエオカキクケコガギグゲゴサシスセソザジズゼゾタチツテトダヂヅデドハヒフヘホバビブベボパピプペポナニヌネノマミムメモヤユヨラリルレロワヲンャュョッー';
 const kanjiN5 = '日一国会人年大十二本中長出三時行見月後前生五間上東四今金九入学高円子外八六下来気小七山話女北午百書先名川千水半男西電校語土木聞食車何南万毎白天母火右読友左休父雨';
 const kanjiN4 = '見探遅間拾連片飼走見聞開建飛売踊選通参誘開閉点消壊割折破汚付外止間落掛拭取片指倒燃張掛飾並植戻仕決予復生夢目続見取受申休残卒閉運成試試雨晴曇熱風冷道道試無火怪咳困宝逃騒諦投守式会伝車席戻電起助歯組折忘醤鍵質傘載火煮煮経花色困丸病故入交仲事故仕食チ運利褒叱誘招頼注盗踏壊汚行輸輸翻発発家眠彫旅育運入退電電鍵嘘お整判似世時喧答倒通死安喧離太痩操伺西合数測確出到酔問相積動手上下親助包沸混計並ボ広割注輸輸値値紐ボ荷謝知泣笑眠滑事調嫌別信知楽優目鳴渡帰荷大焼肉向転風亡音味匂婚知世届録楽利会過召挨熱失目進開受参申拝存伺用緊夢応感迷生';
 
@@ -20,7 +20,7 @@ function showKeyboardOptions(textarea, fieldId, index) {
           <button onclick="removeKeyboard('${containerId}')">❌</button>
         </div>
         <div class="keyboard-box" id="${containerId}-box"
-             style="max-width: 400px; max-height: 400px; display:flex; flex-wrap:wrap; overflow-y:auto; background:#fff; padding:4px;">
+             style="max-width: 300px; max-height: 400px; display:flex; flex-wrap:wrap; overflow-y:auto; background:#fff; padding:4px;">
         </div>
 
       </div>
@@ -61,6 +61,3 @@ function removeKeyboard(containerId) {
 //     div.innerHTML = '';
 //   });
 // }
-
-
-
