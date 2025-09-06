@@ -120,20 +120,20 @@ function mulaiKuis() {
   script.src = pathFile + '?v=' + Date.now();
   script.onload = () => {
     const ambilSoal = (arr) => {
-  const salin = [...arr];
+      const salin = [...arr];
 
-  if (acak) {
-    return salin.sort(() => 0.5 - Math.random()).slice(0, jumlah);
-  } else {
-    const mulai = parseInt(document.getElementById('soalMulai').value) - 1;
-    const akhir = parseInt(document.getElementById('soalAkhir').value) - (parseInt(document.getElementById('soalAkhir').value) - parseInt(document.getElementById('jumlahSoal').value));
-    if (mulai < 0 || akhir > arr.length || mulai >= akhir) {
-      alert(`Rentang soal tidak valid. Harus antara 1 sampai ${arr.length}.`);
-      return [];
-    }
-    return salin.slice(mulai, akhir);
-  }
-};
+      if (acak) {
+        return salin.sort(() => 0.5 - Math.random()).slice(0, jumlah);
+      } else {
+        const mulai = parseInt(document.getElementById('soalMulai').value) - 1;
+        const akhir = parseInt(document.getElementById('soalAkhir').value) - (parseInt(document.getElementById('soalAkhir').value) - parseInt(document.getElementById('jumlahSoal').value));
+        if (mulai < 0 || akhir > arr.length || mulai >= akhir) {
+          alert(`Rentang soal tidak valid. Harus antara 1 sampai ${arr.length}.`);
+          return [];
+        }
+        return salin.slice(mulai, akhir);
+      }
+    };
 
     if (window.soalKuis && 'bentukTe' in window.soalKuis[0]) {
       soalDipilih = ambilSoal(window.soalKuis);
@@ -406,7 +406,7 @@ function shuffleOpsiPilihanGanda(soal) {
 function tampilkanSoalPilihanGanda(kuis) {
   soalDipilih.forEach((soal, i) => {
     // Acak pilihan jawaban
-    const opsiAsli = soal.opsi.map((opt, idx) => ({opt, idx}));
+    const opsiAsli = soal.opsi.map((opt, idx) => ({ opt, idx }));
     const opsiAcak = opsiAsli.sort(() => 0.5 - Math.random());
 
     const opsiHtml = opsiAcak.map((item, j) => `
@@ -432,6 +432,72 @@ document.getElementById('jumlahSoal').addEventListener('input', function () {
   const max = parseInt(this.max);
   if (parseInt(this.value) > max) {
     this.value = max;
+  }
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    const active = document.activeElement;
+
+    if (!active) return;
+
+    // --- Soal Bentuk ---
+    if (active.id.match(/^(te|ta|u|masu|nai|vol|imp|cond)-\d+$/)) {
+      e.preventDefault(); // jangan newline di textarea
+      const [id, i] = active.id.split('-');
+      const bentukMap = {
+        te: 'bentukTe',
+        ta: 'bentukTa',
+        u: 'bentukU',
+        masu: 'bentukMasu',
+        nai: 'bentukNai',
+        vol: 'bentukVolitional',
+        imp: 'bentukImperative',
+        cond: 'bentukConditional'
+      };
+      cekSatuBentuk(parseInt(i), bentukMap[id]);
+    }
+
+    // --- Soal Arti ---
+    else if (active.id.match(/^arti-\d+$/)) {
+      e.preventDefault();
+      const i = parseInt(active.id.split('-')[1]);
+      cekArti(i);
+    }
+
+    // --- Soal Pilihan Ganda ---
+    else if (active.name && active.name.startsWith('pg-')) {
+      e.preventDefault();
+      const i = parseInt(active.name.split('-')[1]);
+      const soal = soalDipilih[i];
+      if (soal && typeof soal.jawaban_index !== 'undefined') {
+        cekPilihanGanda(i, soal.jawaban_index);
+      }
+    }
+  }
+  else if (e.key === 'Escape') {
+    const active = document.activeElement;
+    if (!active) return;
+
+    // --- Soal Bentuk ---
+    if (active.id.match(/^(te|ta|u|masu|nai|vol|imp|cond)-\d+$/)) {
+      const [id, i] = active.id.split('-');
+      const feedback = document.getElementById(`feedback-${id}-${i}`);
+      if (feedback && feedback.innerHTML.trim() !== "") {
+        e.preventDefault();
+        document.getElementById(`keyboard-container-${id}-${i}`).innerHTML = "";
+      }
+    }
+
+    // --- Soal Arti ---
+    else if (active.id.match(/^arti-\d+$/)) {
+      const i = parseInt(active.id.split('-')[1]);
+      const feedback = document.getElementById(`feedback-arti-${i}`);
+      if (feedback && feedback.innerHTML.trim() !== "") {
+        e.preventDefault();
+        document.getElementById(`keyboard-container-arti-${i}`).innerHTML = "";
+      }
+    }
   }
 });
 
