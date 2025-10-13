@@ -9,9 +9,9 @@ const subkategoriMap = {
     'Arti ke Hiragana Kata Kerja': 'data/KataKerja/KataKerjaN4ArtiHiragana.js',
     'Arti ke Kanji Kata Kerja': 'data/KataKerja/KataKerjaN4ArtiKanji.js',
     'Arti Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4ArtiNihongonice.js',
-    'Arti Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntrasitifArti.js',
-    'Arti ke Hiragana Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntrasitifArtiHiragana.js',
-    'Arti ke Kanji Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntrasitifArtiKanji.js',
+    'Arti Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntransitifArti.js',
+    'Arti ke Hiragana Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntransitifArtiHiragana.js',
+    'Arti ke Kanji Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntransitifArtiKanji.js',
     'Pilihan Ganda Kata Kerja': 'data/KataKerja/KataKerjaN4PilihanGanda.js',
     'Pilihan Ganda Kata Kerja Kanji': 'data/KataKerja/KataKerjaN4PilihanGandaKanji.js',
     'Pilihan Ganda Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PilihanGandaNihongonice.js',
@@ -504,4 +504,5 @@ document.addEventListener('keydown', function (e) {
     }
   }
 });
+
 
