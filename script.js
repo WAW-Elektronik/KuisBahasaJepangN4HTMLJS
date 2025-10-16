@@ -13,6 +13,7 @@ const subkategoriMap = {
     'Arti ke Hiragana Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntransitifArtiHiragana.js',
     'Arti ke Kanji Kata Kerja Transitif Intransitif': 'data/KataKerja/KataKerjaN4TransitifIntransitifArtiKanji.js',
     'Pilihan Ganda Kata Kerja': 'data/KataKerja/KataKerjaN4PilihanGanda.js',
+    'Pilihan Ganda Kata Kerja Grammar': 'data/KataKerja/KataKerjaN4PilihanGandaGrammar.js',
     'Pilihan Ganda Kata Kerja Kanji': 'data/KataKerja/KataKerjaN4PilihanGandaKanji.js',
     'Pilihan Ganda Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PilihanGandaNihongonice.js',
   },
@@ -504,5 +505,6 @@ document.addEventListener('keydown', function (e) {
     }
   }
 });
+
 
 
