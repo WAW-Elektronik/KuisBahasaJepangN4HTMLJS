@@ -22,6 +22,7 @@
     <option value="KataKerja">Kata Kerja</option>
     <option value="KataSifat">Kata Sifat</option>
     <option value="KataBenda">Kata Benda</option>
+    <option value="KataKeterangan">Kata Keterangan</option>
   </select>
 </label>
 
@@ -46,7 +47,45 @@
   <input type="number" id="soalMulai" value="1" min="1" style="width: 60px;">
   <label for="soalAkhir">Sampai soal ke:</label>
   <input type="number" id="soalAkhir" value="10" min="1" style="width: 60px;">
+  <button onclick="tampilkanInformasi()">Informasi Soal</button>
+  <!-- Dialog untuk informasi soal -->
+<dialog id="dialogInformasi">
+  <h3>Informasi Soal per BAB</h3>
+  <pre style="text-align:left; white-space:pre-wrap;">
+Informasi untuk Arti Kata Kerja, Bentuk Kata Kerja, dan Pilihan Ganda Kata Kerja
+
+BAB 26  Soal 1–8
+BAB 27  Soal 9–16
+BAB 28  Soal 17–24
+BAB 29  Soal 25–45
+BAB 30  Soal 46–60
+BAB 31  Soal 61–69
+BAB 32  Soal 70–89
+BAB 33  Soal 90–104
+BAB 34  Soal 105–118
+BAB 35  Soal 119–128
+BAB 36  Soal 129–136
+BAB 37  Soal 137–156
+BAB 38  Soal 157–172
+BAB 39  Soal 173–188
+BAB 40  Soal 189–201
+BAB 41  Soal 202–210
+BAB 42  Soal 211–219
+BAB 43  Soal 220–229
+BAB 44  Soal 230–242
+BAB 45  Soal 243–250
+BAB 46  Soal 251–262
+BAB 47  Soal 263–274
+BAB 48  Soal 275–278
+BAB 49  Soal 279–295
+BAB 50  Soal 296–317
+  </pre>
+  <button onclick="tutupInformasi()">Tutup</button>
+</dialog>
+  <!--<button id="infoSoalBtn" style="display:none; margin-top: 10px;" onclick="tampilkanInfoSoal()">Informasi Soal</button>
+  <div id="infoSoalTeks" style="display:none; margin-top: 10px; white-space: pre-wrap;"></div>-->
 </div>
+<!-- Tombol untuk informasi soal -->
 
   <button onclick="mulaiKuis()">Mulai Kuis</button>
 
