@@ -26,6 +26,11 @@ const subkategoriMap = {
   },
   KataKeterangan: {
     'Arti Kata Keterangan': 'data/KataKeterangan/KataKeteranganN4arti.js'
+  },
+  KotobaBilangannKataBantuBilangan: {
+    'KBB': 'data/KotobaBilangannKataBantuBilangan/KataBantuBilangan.js',
+    'Arti KB Dai': 'data/KotobaBilangannKataBantuBilangan/PenulisanKBDai.js',
+    'Arti Kotoba Tanggal': 'data/KotobaBilangannKataBantuBilangan/KotobaTanggal.js',
   }
 };
 
@@ -63,6 +68,8 @@ function terapkanKategori() {
       jumlahMaksSoal = window.soalKuisArti.length;
     } else if (window.questions) {
       jumlahMaksSoal = window.questions.length;
+    } else if (window.soalKataBantuBilangan) {
+      jumlahMaksSoal = window.soalKataBantuBilangan.length;
     } else {
       alert("Data soal tidak ditemukan.");
       jumlahMaksSoal = 100;
@@ -121,6 +128,7 @@ function mulaiKuis() {
   delete window.soalKuis;
   delete window.soalKuisArti;
   delete window.questions;
+  delete window.soalKataBantuBilangan;
 
   const existingScripts = document.querySelectorAll('script[src^="data/"]');
   existingScripts.forEach(s => s.remove());
@@ -156,7 +164,11 @@ function mulaiKuis() {
       soalDipilih = ambilSoal(window.questions);
       tampilkanSoalPilihanGanda(kuis);
 
-    } else {
+    } else if (window.soalKataBantuBilangan && 'KBBPenyebutan' in window.soalKataBantuBilangan[0]) {
+      soalDipilih = ambilSoal(window.soalKataBantuBilangan);
+      tampilkanSoalKataBantuBilangan(kuis);
+
+    }else {
       alert("Struktur soal tidak dikenali.");
     }
   };
@@ -196,6 +208,21 @@ function tampilkanSoalArti(kuis) {
       <span id="feedback-arti-${i}"></span>
       <div id="keyboard-container-arti-${i}"></div>
     `;//<div id="keyboard-container-arti-${i}"></div> --> untuk menampilkan keyboard di soal arti
+    kuis.appendChild(div);
+  });
+}
+
+function tampilkanSoalKataBantuBilangan(kuis) {
+  soalDipilih.forEach((soal, i) => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `
+      <b>${i + 1}. ${soal.pertanyaan}</b><br><br>
+      ${generateFieldKataBantuBilangan(i, "KBBPenyebutan", "Penyebutan")}
+      ${generateFieldKataBantuBilangan(i, "KBBObjek", "Objek")}
+      <button onclick="periksaSatuKBB(${i})">Cek Semua KBB (Soal Ini)</button>
+      <div id="hasilKBB-${i}"></div>
+    `;//<div id="keyboard-container-${id}-${i}"></div> --> untuk menampilkan keyboard di soal bentuk (ada di generateFieldBentuk) 
     kuis.appendChild(div);
   });
 }
@@ -263,6 +290,49 @@ function periksaSatu(i) {
   document.getElementById(`hasil-${i}`).innerText = `Skor soal ini: ${skor} / 8`;
 }
 
+function generateFieldKataBantuBilangan(i, KBB, label) {
+  const id = getFieldIdFromKBB(KBB);
+  return `
+    <label>${label}: 
+      <textarea id="${id}-${i}" onfocus="showKeyboardOptions(this, '${id}', ${i})"></textarea>
+      <button onclick="cekSatuKBB(${i}, '${KBB}')">Cek</button>
+      <span id="feedback-${id}-${i}"></span>
+    </label><br>
+    <div id="keyboard-container-${id}-${i}"></div>
+  `;
+}
+
+function cekSatuKBB(i, KBB) {
+  const soal = soalDipilih[i];
+  const id = getFieldIdFromKBB(KBB);
+  const inputId = `${id}-${i}`;
+  const input = document.getElementById(inputId).value.trim();
+  const kunci = soal[KBB];
+  const feedback = document.getElementById(`feedback-${id}-${i}`);
+
+  if (input === kunci) {
+    feedback.innerHTML = `<span class="correct-answer">✅</span>`;
+  } else {
+    feedback.innerHTML = `<span class="wrong-answer">❌ ${kunci}</span>`;
+  }
+}
+
+function periksaSatuKBB(i) {
+  const soal = soalDipilih[i];
+  let skor = 0;
+  const KBBList = [
+    "KBBPenyebutan", "KBBObjek"
+  ];
+
+  KBBList.forEach(KBB => {
+    const id = getFieldIdFromKBB(KBB);
+    const input = document.getElementById(`${id}-${i}`).value.trim();
+    if (input === soal[KBB]) skor++;
+  });
+
+  document.getElementById(`hasilKBB-${i}`).innerText = `Skor soal ini: ${skor} / 2`;
+}
+
 function periksaJawaban() {
   let total = 0;
   let maks = 0;
@@ -278,6 +348,18 @@ function periksaJawaban() {
         const id = getFieldIdFromBentuk(bentuk);
         const input = document.getElementById(`${id}-${i}`).value.trim();
         if (input === soal[bentuk]) total++;
+      });
+      maks += 8;
+    }
+    
+    else if ('KBB' in soal) {
+      const KBBList = [
+        "KBBPenyebutan", "KBBObjek"
+      ];
+      KBBList.forEach(KBB => {
+        const id = getFieldIdFromKBB(KBB);
+        const input = document.getElementById(`${id}-${i}`).value.trim();
+        if (input === soal[KBB]) total++;
       });
       maks += 8;
     }
@@ -337,6 +419,33 @@ function cekPerBentuk() {
   alert(`Bentuk: ${bentuk}\nBenar: ${benar} / ${total} (${persentase}%)`);
 }
 
+function getFieldIdFromKBB(KBB) {
+  return {
+    KBBPenyebutan: 'Penyebutan',
+    KBBObjek: 'Objek'
+  }[KBB];
+}
+
+function cekPerKBB() {
+  const KBB = document.getElementById('KBBCek').value;
+  let benar = 0;
+
+  soalDipilih.forEach((soal, i) => {
+    const id = getFieldIdFromKBB(KBB);
+    const input = document.getElementById(`${id}-${i}`).value.trim();
+    if (input === soal[KBB]) {
+      benar++;
+      document.getElementById(`${id}-${i}`).style.backgroundColor = '#c2f5c2'; // hijau terang
+    } else {
+      document.getElementById(`${id}-${i}`).style.backgroundColor = '#f5c2c2'; // merah terang
+    }
+  });
+
+  const total = soalDipilih.length;
+  const persentase = Math.round((benar / total) * 100);
+  alert(`KBB: ${KBB}\nBenar: ${benar} / ${total} (${persentase}%)`);
+}
+
 function cekArti(i) {
   const input = document.getElementById(`arti-${i}`).value.trim();
   const kunci = soalDipilih[i].jawaban;
@@ -370,6 +479,26 @@ function resetJawaban() {
       });
       const hasilDiv = document.getElementById(`hasil-${i}`);
       if (hasilDiv) hasilDiv.innerText = '';
+    }
+
+    if ('KBBPenyebutan' in soal) {
+      const KBBList = [
+        "KBBPenyebutan", "KBBObjek"
+      ];
+      KBBList.forEach(KBB => {
+        const id = getFieldIdFromKBB(KBB);
+        const inputEl2 = document.getElementById(`${id}-${i}`);
+        const feedbackEl2 = document.getElementById(`feedback-${id}-${i}`);
+        if (inputEl2) {
+          inputEl2.value = '';
+          inputEl2.style.backgroundColor = '';
+        }
+        if (feedbackEl2) {
+          feedbackEl2.innerHTML = '';
+        }
+      });
+      const hasilDiv2 = document.getElementById(`hasilKBB-${i}`);
+      if (hasilDiv2) hasilDiv2.innerText = '';
     }
 
     // Reset untuk soal arti (textarea)
@@ -467,6 +596,16 @@ document.addEventListener('keydown', function (e) {
       cekSatuBentuk(parseInt(i), bentukMap[id]);
     }
 
+    else if (active.id.match(/^(Penyebutan|Objek)-\d+$/)) {
+      e.preventDefault(); // jangan newline di textarea
+      const [id, i] = active.id.split('-');
+      const bentukMap = {
+        Penyebutan: 'KBBPenyebutan',
+        Objek: 'KBBObjek',
+      };
+      cekSatuKBB(parseInt(i), bentukMap[id]);
+    }
+
     // --- Soal Arti ---
     else if (active.id.match(/^arti-\d+$/)) {
       e.preventDefault();
@@ -490,6 +629,15 @@ document.addEventListener('keydown', function (e) {
 
     // --- Soal Bentuk ---
     if (active.id.match(/^(te|ta|u|masu|nai|vol|imp|cond)-\d+$/)) {
+      const [id, i] = active.id.split('-');
+      const feedback = document.getElementById(`feedback-${id}-${i}`);
+      if (feedback && feedback.innerHTML.trim() !== "") {
+        e.preventDefault();
+        document.getElementById(`keyboard-container-${id}-${i}`).innerHTML = "";
+      }
+    }
+
+    if (active.id.match(/^(Penyebutan|Objek)-\d+$/)) {
       const [id, i] = active.id.split('-');
       const feedback = document.getElementById(`feedback-${id}-${i}`);
       if (feedback && feedback.innerHTML.trim() !== "") {
