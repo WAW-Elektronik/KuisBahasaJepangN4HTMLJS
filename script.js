@@ -19,8 +19,8 @@ const subkategoriMap = {
     'Pilihan Ganda Kata Kerja from Nihongonice': 'data/KataKerja/KataKerjaN4PilihanGandaNihongonice.js',
   },
   KataSifat: {
-    'Arti Kata Sifat I': 'data/KataSifat/I_KeIndonesia.js'
-    'Arti Kata Sifat Na': 'data/KataSifat/Na_KeIndonesia.js'
+    'Arti Kata Sifat I': 'data/KataSifat/I_KeIndonesia.js',
+    'Arti Kata Sifat Na': 'data/KataSifat/Na_KeIndonesia.js',
   },
   KataBenda: {
     'Arti Kata Benda': 'data/KataBenda/ArtiKeIndonesia.js'
@@ -658,5 +658,6 @@ document.addEventListener('keydown', function (e) {
     }
   }
 });
+
 
 
