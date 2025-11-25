@@ -1,23 +1,23 @@
 window.soalKuisArti = [
-  //BAB26
+  //BAB26 (8) (1-8)
   { pertanyaan: "Apa arti dari 'みます'?", jawaban: "melihat, memeriksa" },
   { pertanyaan: "Apa arti dari 'さがします'?", jawaban: "mencari" },
   { pertanyaan: "Apa arti dari 'おくれます'?", jawaban: "terlambat" },
   { pertanyaan: "Apa arti dari 'まに あいます'?", jawaban: "sempat" },
-  { pertanyaan: "Apa arti dari 'やります'?", jawaban: "melakukan" },
+  { pertanyaan: "Apa arti dari 'やります'?", jawaban: "melakukan,memberi" },
   { pertanyaan: "Apa arti dari 'ひろいます'?", jawaban: "mendapat, mengambil" },
   { pertanyaan: "Apa arti dari 'れんらくします'?", jawaban: "menghubungi" },
   { pertanyaan: "Apa arti dari 'かたづきます'?", jawaban: "membereskan" },
-  //BAB27
+  //BAB27 (8) (9-16)
   { pertanyaan: "Apa arti dari 'かいます'?", jawaban: "memelihara" },
   { pertanyaan: "Apa arti dari 'はしります'?", jawaban: "berlari [jalan]" },
   { pertanyaan: "Apa arti dari 'みえます'?", jawaban: "terlihat" },
   { pertanyaan: "Apa arti dari 'きこえます'?", jawaban: "terdengar" },
   { pertanyaan: "Apa arti dari 'できます'?", jawaban: "dibuat" },
-  { pertanyaan: "Apa arti dari 'ひらきます'?", jawaban: "membuka/mengadakan" },
+  { pertanyaan: "Apa arti dari 'ひらきます'?", jawaban: "membuka,mengadakan" },
   { pertanyaan: "Apa arti dari 'たてます'?", jawaban: "membangun" },
   { pertanyaan: "Apa arti dari 'とびます'?", jawaban: "terbang" },
-  //BAB28
+  //BAB28 (8) (17-24)
   { pertanyaan: "Apa arti dari 'うります'?", jawaban: "terjual" },
   { pertanyaan: "Apa arti dari 'おどります'?", jawaban: "menari" },
   { pertanyaan: "Apa arti dari 'かみます'?", jawaban: "makan, menggigit" },
@@ -26,7 +26,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'メモします'?", jawaban: "mencatat" },
   { pertanyaan: "Apa arti dari 'さんかします'?", jawaban: "mengikuti" },
   { pertanyaan: "Apa arti dari 'さそいます'?", jawaban: "mengajak" },
-  //BAB29
+  //BAB29 (21) (25-45)
   { pertanyaan: "Apa arti dari 'あきます'?", jawaban: "terbuka" },
   { pertanyaan: "Apa arti dari 'しまります'?", jawaban: "tertutup" },
   { pertanyaan: "Apa arti dari 'つきます'?", jawaban: "menyala" },
@@ -46,9 +46,9 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'とりかえます'?", jawaban: "mengganti" },
   { pertanyaan: "Apa arti dari 'かたづけます'?", jawaban: "membereskan" },
   { pertanyaan: "Apa arti dari 'さします'?", jawaban: "menunjuk" },
-  { pertanyaan: "Apa arti dari 'たおれます'?", jawaban: "jatuh" },
+  { pertanyaan: "Apa arti dari 'たおれます'?", jawaban: "jatuh, roboh" },
   { pertanyaan: "Apa arti dari 'もえます'?", jawaban: "terbakar" },
-  //BAB30
+  //BAB30 (15) (46-60)
   { pertanyaan: "Apa arti dari 'はります'?", jawaban: "menempelkan" },
   { pertanyaan: "Apa arti dari 'かけます'?", jawaban: "menggantungkan" },
   { pertanyaan: "Apa arti dari 'かざります'?", jawaban: "menghiasi" },
@@ -63,8 +63,8 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'そのままに します'?", jawaban: "membiarkan begitu" },
   { pertanyaan: "Apa arti dari 'せいかつします'?", jawaban: "hidup" },
   { pertanyaan: "Apa arti dari 'ゆめ を します'?", jawaban: "bermimpi" },
-  { pertanyaan: "Apa arti dari 'めがさめます'?", jawaban: "bangun, sadar" },
-  //BAB31
+  { pertanyaan: "Apa arti dari 'めがさめます'?", jawaban: "bangun,terbangun,sadar" },
+  //BAB31 (9) (61-69)
   { pertanyaan: "Apa arti dari 'つづけます'?", jawaban: "melanjutkan" },
   { pertanyaan: "Apa arti dari 'みつけます'?", jawaban: "menemukan" },
   { pertanyaan: "Apa arti dari 'とります'?", jawaban: "mengambil" },
@@ -74,7 +74,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'のこります'?", jawaban: "tinggal" },
   { pertanyaan: "Apa arti dari 'そつぎょうします'?", jawaban: "lulus, tamat" },
   { pertanyaan: "Apa arti dari 'とじます'?", jawaban: "tutup" },
-  //BAB32
+  //BAB32 (20) (70-89)
   { pertanyaan: "Apa arti dari 'うんどうします'?", jawaban: "berolahraga" },
   { pertanyaan: "Apa arti dari 'せいこうします'?", jawaban: "berhasil" },
   { pertanyaan: "Apa arti dari 'しけん に しっぱいします'?", jawaban: "gagal ujian" },
@@ -95,7 +95,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'せき を します/が でます'?", jawaban: "batuk" },
   { pertanyaan: "Apa arti dari 'こまります'?", jawaban: "bingung" },
   { pertanyaan: "Apa arti dari 'たからくじ が あたります'?", jawaban: "memenangi lotre" },
-  //BAB33
+  //BAB33 (15) (90-104)
   { pertanyaan: "Apa arti dari 'にげます'?", jawaban: "berlari" },
   { pertanyaan: "Apa arti dari 'さわぎます'?", jawaban: "menghebohkan" },
   { pertanyaan: "Apa arti dari 'あきらめます'?", jawaban: "putus asa" },
@@ -111,10 +111,10 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'リサイクルします'?", jawaban: "mendaur ulang" },
   { pertanyaan: "Apa arti dari 'おきます'?", jawaban: "terjadi" },
   { pertanyaan: "Apa arti dari 'たすけあいます'?", jawaban: "bantu membantu" },
-  //BAB34
+  //BAB34 (14) (105-118)
   { pertanyaan: "Apa arti dari 'は を みがきます'?", jawaban: "menggosok gigi" },
   { pertanyaan: "Apa arti dari 'くみたてます'?", jawaban: "memasang" },
-  { pertanyaan: "Apa arti dari 'おります'?", jawaban: "melipat" },
+  { pertanyaan: "Apa arti dari 'おります'?", jawaban: "melipat, ada (merendahkan diri)" },
   { pertanyaan: "Apa arti dari 'わすれもの に きが つきます'?", jawaban: "teringat barang ketinggalan" },
   { pertanyaan: "Apa arti dari 'しょうゆ を つけます'?", jawaban: "membubuhkan kecap asin" },
   { pertanyaan: "Apa arti dari 'かぎ が みつかります'?", jawaban: "kunci ditemukan" },
@@ -126,7 +126,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'にます'?", jawaban: "merebus" },
   { pertanyaan: "Apa arti dari 'にえます'?", jawaban: "telah matang" },
   { pertanyaan: "Apa arti dari 'たちます'?", jawaban: "lewat, berlalu" },
-  //BAB35
+  //BAB35 (10) (119-128)
   { pertanyaan: "Apa arti dari 'はな が さきます'?", jawaban: "bunga mekar" },
   { pertanyaan: "Apa arti dari 'いろ が かわります'?", jawaban: "warna berubah" },
   { pertanyaan: "Apa arti dari 'こまります'?", jawaban: "bingung" },
@@ -137,7 +137,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'にゅうりょくします'?", jawaban: "mengisi" },
   { pertanyaan: "Apa arti dari 'まじわります'?", jawaban: "bergaul" },
   { pertanyaan: "Apa arti dari 'なかよくします'?", jawaban: "bergaul dengan akrab" },
-  //BAB36
+  //BAB36 (8) (129-136)
   { pertanyaan: "Apa arti dari 'じこ に あいます'?", jawaban: "tertimpa kecelakaan" },
   { pertanyaan: "Apa arti dari 'ちょきんします'?", jawaban: "menabung" },
   { pertanyaan: "Apa arti dari '7じ を すぎます'?", jawaban: "lewat pukul 7" },
@@ -146,7 +146,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'チャレンジします'?", jawaban: "menantang" },
   { pertanyaan: "Apa arti dari 'はこびます'?", jawaban: "mengangkut" },
   { pertanyaan: "Apa arti dari 'りようします'?", jawaban: "menggunakan" },
-  //BAB37
+  //BAB37 (20) (137-156)
   { pertanyaan: "Apa arti dari 'ほめます'?", jawaban: "memuji" },
   { pertanyaan: "Apa arti dari 'しかります'?", jawaban: "memarahi" },
   { pertanyaan: "Apa arti dari 'さそいます'?", jawaban: "mengajak" },
@@ -167,7 +167,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'ねむります'?", jawaban: "tidur" },
   { pertanyaan: "Apa arti dari 'ほります'?", jawaban: "mengukir, memahat" },
   { pertanyaan: "Apa arti dari 'いっぴきも いません'?", jawaban: "tidak ada seekor pun" },
-  //BAB38
+  //BAB38 (16) (157-172)
   { pertanyaan: "Apa arti dari 'りょこう に さんかします'?", jawaban: "mengikuti perjalanan" },
   { pertanyaan: "Apa arti dari 'そだてます'?", jawaban: "memelihara" },
   { pertanyaan: "Apa arti dari 'はこびます'?", jawaban: "mengangkut" },
@@ -181,12 +181,12 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'せいりします'?", jawaban: "mengatur" },
   { pertanyaan: "Apa arti dari 'はんこ を おします'?", jawaban: "mengecap" },
   { pertanyaan: "Apa arti dari 'にて います'?", jawaban: "mirip" },
-  { pertanyaan: "Apa arti dari 'せわ を します'?", jawaban: "merawat" },
+  { pertanyaan: "Apa arti dari 'せわ を します'?", jawaban: "merawat,menjaga,membantu" },
   { pertanyaan: "Apa arti dari 'じかん が たちます'?", jawaban: "waktu berlalu" },
   { pertanyaan: "Apa arti dari 'けんかします'?", jawaban: "bertengkar" },
-  //BAB39
+  //BAB39 (16) (173-188)
   { pertanyaan: "Apa arti dari 'こたえます'?", jawaban: "menjawab" },
-  { pertanyaan: "Apa arti dari 'たおれます'?", jawaban: "roboh" },
+  { pertanyaan: "Apa arti dari 'たおれます'?", jawaban: "jatuh, roboh" },
   { pertanyaan: "Apa arti dari 'とおります'?", jawaban: "lewat, melalui" },
   { pertanyaan: "Apa arti dari 'しにます'?", jawaban: "meninggal dunia" },
   { pertanyaan: "Apa arti dari 'びっくります'?", jawaban: "kaget" },
@@ -201,7 +201,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'ぶつかります'?", jawaban: "menabrak" },
   { pertanyaan: "Apa arti dari 'せいようかします'?", jawaban: "kebarat-baratan" },
   { pertanyaan: "Apa arti dari 'あいます'?", jawaban: "cocok" },
-  //BAB40
+  //BAB40 (13) (189-201)
   { pertanyaan: "Apa arti dari 'かぞえます'?", jawaban: "menghitung" },
   { pertanyaan: "Apa arti dari 'はかります'?", jawaban: "mengukur, menimbang" },
   { pertanyaan: "Apa arti dari 'たしかめます'?", jawaban: "mengecek" },
@@ -211,21 +211,21 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'うまく いきます'?", jawaban: "berhasil dengan baik" },
   { pertanyaan: "Apa arti dari 'もんだい が でます'?", jawaban: "diberikan soal ujian" },
   { pertanyaan: "Apa arti dari 'そうだんします'?", jawaban: "berkonsultasi" },
-  { pertanyaan: "Apa arti dari 'いらっしゃいます'?", jawaban: "datang" },
+  //{ pertanyaan: "Apa arti dari 'いらっしゃいます'?", jawaban: "datang" },
   { pertanyaan: "Apa arti dari 'つみます'?", jawaban: "memuatkan" },
   { pertanyaan: "Apa arti dari 'うごかします'?", jawaban: "menggerakkan" },
   { pertanyaan: "Apa arti dari 'て に いれます'?", jawaban: "mendapatkan" },
-  //BAB41
-  { pertanyaan: "Apa arti dari 'いただきます'?", jawaban: "menerima" },
+  //BAB41 (9) (202-210)
+  { pertanyaan: "Apa arti dari 'いただきます'?", jawaban: "makan, minum, menerima (merendahkan diri)" },
   { pertanyaan: "Apa arti dari 'くださいます'?", jawaban: "memberikan" },
-  { pertanyaan: "Apa arti dari 'やります'?", jawaban: "memberi" },
+  { pertanyaan: "Apa arti dari 'やります'?", jawaban: "melakukan,memberi" },
   { pertanyaan: "Apa arti dari 'あげます'?", jawaban: "menaikkan" },
   { pertanyaan: "Apa arti dari 'さげます'?", jawaban: "menurunkan" },
   { pertanyaan: "Apa arti dari 'しんせつ に します'?", jawaban: "berbaik hati" },
   { pertanyaan: "Apa arti dari 'おいわい を します'?", jawaban: "merayakan" },
   { pertanyaan: "Apa arti dari 'いじめます'?", jawaban: "menyiksa, menganiaya" },
   { pertanyaan: "Apa arti dari 'たすけます'?", jawaban: "membantu, menolong" },
-  //BAB42
+  //BAB42 (9) (211-219)
   { pertanyaan: "Apa arti dari 'つつみます'?", jawaban: "membungkus" },
   { pertanyaan: "Apa arti dari 'わかします'?", jawaban: "memasak (air), mendidihkan" },
   { pertanyaan: "Apa arti dari 'まぜます'?", jawaban: "mencampur" },
@@ -235,7 +235,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'ひろめます'?", jawaban: "menyebarluaskan" },
   { pertanyaan: "Apa arti dari 'わります'?", jawaban: "membagi" },
   { pertanyaan: "Apa arti dari 'そそぎます'?", jawaban: "menyiram" },
-  //BAB43
+  //BAB43 (10) (220-229)
   { pertanyaan: "Apa arti dari 'ゆしゅつ が ふえます'?", jawaban: "[ekspor] bertambah" },
   { pertanyaan: "Apa arti dari 'ゆしゅつ が へります'?", jawaban: "[ekspor] berkurang" },
   { pertanyaan: "Apa arti dari 'ねだん が あがります'?", jawaban: "[harga] meningkat" },
@@ -246,7 +246,7 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'ガソリン が なくなります'?", jawaban: "[bensin] habis" },
   { pertanyaan: "Apa arti dari 'あやまります'?", jawaban: "memohon maaf" },
   { pertanyaan: "Apa arti dari 'しりあいます'?", jawaban: "berkenalan" },
-  //BAB44
+  //BAB44 (13) (230-242)
   { pertanyaan: "Apa arti dari 'なきます'?", jawaban: "menangis" },
   { pertanyaan: "Apa arti dari 'わらいます'?", jawaban: "tertawa" },
   { pertanyaan: "Apa arti dari 'ねむります'?", jawaban: "tidur" },
@@ -260,47 +260,47 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'どういうふう に なさいますか？'?", jawaban: "modelnya seperti bagaimana?" },
   { pertanyaan: "Apa arti dari 'いやがります'?", jawaban: "tidak mau" },
   { pertanyaan: "Apa arti dari 'わかれます'?", jawaban: "berpisah" },
-  //BAB45
+  //BAB45 (8) (243-250)
   { pertanyaan: "Apa arti dari 'しんじます'?", jawaban: "percaya" },
   { pertanyaan: "Apa arti dari 'キャンセルします'?", jawaban: "membatalkan" },
   { pertanyaan: "Apa arti dari 'しらせます'?", jawaban: "memberitahukan" },
   { pertanyaan: "Apa arti dari 'たのしみ に しています'?", jawaban: "menikmati" },
   { pertanyaan: "Apa arti dari 'ゆうしょうします'?", jawaban: "menang" },
-  { pertanyaan: "Apa arti dari 'め が さめます'?", jawaban: "terbangun" },
+  { pertanyaan: "Apa arti dari 'めがさめます'?", jawaban: "bangun,terbangun,sadar" },
   { pertanyaan: "Apa arti dari 'なります'?", jawaban: "berbunyi" },
   { pertanyaan: "Apa arti dari 'セットします'?", jawaban: "memasang, mengatur" },
-  //BAB46
+  //BAB46 (12) (251-262)
   { pertanyaan: "Apa arti dari 'わたします'?", jawaban: "menyerahkan" },
   { pertanyaan: "Apa arti dari 'かえって きます'?", jawaban: "pulang" },
   { pertanyaan: "Apa arti dari 'バス が でます'?", jawaban: "bus berangkat" },
   { pertanyaan: "Apa arti dari 'にもつ が とどきます'?", jawaban: "barang sampai" },
   { pertanyaan: "Apa arti dari 'だいがく に にゅうがくします'?", jawaban: "masuk universitas" },
-  { pertanyaan: "Apa arti dari 'だいがく を そつぎょうします'?", jawaban: "lulus/tamat dari universitas" },
+  { pertanyaan: "Apa arti dari 'だいがく を そつぎょうします'?", jawaban: "lulus, tamat dari universitas" },
   { pertanyaan: "Apa arti dari 'やきます'?", jawaban: "membakar" },
   { pertanyaan: "Apa arti dari 'パン が やけます'?", jawaban: "roti dibakar" },
   { pertanyaan: "Apa arti dari 'にく が やけます'?", jawaban: "daging dibakar" },
   { pertanyaan: "Apa arti dari 'むかいます'?", jawaban: "menuju" },
   { pertanyaan: "Apa arti dari 'ついて います'?", jawaban: "mujur, untung" },
   { pertanyaan: "Apa arti dari 'ころびます'?", jawaban: "jatuh" },
-  //BAB47
+  //BAB47 (12) (263-274)
   { pertanyaan: "Apa arti dari 'かぜ が ふきます'?", jawaban: "angin bertiup" },
   { pertanyaan: "Apa arti dari 'ごみ が もえます'?", jawaban: "sampah terbakar" },
   { pertanyaan: "Apa arti dari 'なくなります'?", jawaban: "meninggal dunia" },
   { pertanyaan: "Apa arti dari 'ひと が あつまります'?", jawaban: "orang berkumpul" },
   { pertanyaan: "Apa arti dari 'ひと が わかれます'?", jawaban: "orang berpisah" },
   { pertanyaan: "Apa arti dari 'します'?", jawaban: "dalam keadaan" },
-  { pertanyaan: "Apa arti dari 'おと/こえ が します'?", jawaban: "berbunyi/bersuara" },
+  { pertanyaan: "Apa arti dari 'おと/こえ が します'?", jawaban: "berbunyi, bersuara" },
   { pertanyaan: "Apa arti dari 'あじ が します'?", jawaban: "terasa" },
   { pertanyaan: "Apa arti dari 'におい が します'?", jawaban: "berbau" },
   { pertanyaan: "Apa arti dari 'こんやくします'?", jawaban: "bertunangan" },
   { pertanyaan: "Apa arti dari 'しりあいます'?", jawaban: "berkenalan" },
-  { pertanyaan: "Apa arti dari 'せわ を します'?", jawaban: "menjaga, membantu" },
-  //BAB48
+  { pertanyaan: "Apa arti dari 'せわ を します'?", jawaban: "merawat,menjaga,membantu" },
+  //BAB48 (4) (275-278)
   { pertanyaan: "Apa arti dari 'おろします'?", jawaban: "menurunkan" },
   { pertanyaan: "Apa arti dari 'とどけます'?", jawaban: "mengantarkan" },
   { pertanyaan: "Apa arti dari 'ろくおんします'?", jawaban: "merekam" },
   { pertanyaan: "Apa arti dari 'たのしみます'?", jawaban: "menikmati" },
-  //BAB49
+  //BAB49 (17) (279-295)
   { pertanyaan: "Apa arti dari 'りようします'?", jawaban: "menggunakan" },
   { pertanyaan: "Apa arti dari 'かいしゃ に つとめます'?", jawaban: "bekerja di perusahaan" },
   { pertanyaan: "Apa arti dari 'いす に かけます'?", jawaban: "duduk di kursi" },
@@ -318,9 +318,9 @@ window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'すすみます'?", jawaban: "lanjut kuliah di" },
   { pertanyaan: "Apa arti dari 'かいはつします'?", jawaban: "mengembangkan" },
   { pertanyaan: "Apa arti dari 'じゅしょうします'?", jawaban: "meraih (penghargaan)" },
-  //BAB50
+  //BAB50 (22) (296-317)
   { pertanyaan: "Apa arti dari 'まいります'?", jawaban: "pergi, datang (merendahkan diri)" },
-  { pertanyaan: "Apa arti dari 'おります'?", jawaban: "ada (merendahkan diri)" },
+  { pertanyaan: "Apa arti dari 'おります'?", jawaban: "melipat, ada (merendahkan diri)" },
   { pertanyaan: "Apa arti dari 'いただきます'?", jawaban: "makan, minum, menerima (merendahkan diri)" },
   { pertanyaan: "Apa arti dari 'もうします'?", jawaban: "bernama (merendahkan diri)" },
   { pertanyaan: "Apa arti dari 'いたします'?", jawaban: "melakukan (merendahkan diri)" },
