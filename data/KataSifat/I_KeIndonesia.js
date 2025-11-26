@@ -1,7 +1,7 @@
 window.soalKuisArti = [
   { pertanyaan: "Apa arti dari 'おおきい'?", jawaban: "Besar" },
-  { pertanyaan: "Apa arti dari 'わるい'?", jawaban: "Buruk/jelek" },,
-  { pertanyaan: "Apa arti dari 'すずしい'?", jawaban: "Dingin(angin)/Sejuk" },,
+  { pertanyaan: "Apa arti dari 'わるい'?", jawaban: "Buruk/jelek" },
+  { pertanyaan: "Apa arti dari 'すずしい'?", jawaban: "Dingin(angin)/Sejuk" },
   { pertanyaan: "Apa arti dari 'わかい'?", jawaban: "Muda" },
   { pertanyaan: "Apa arti dari 'すごい'?", jawaban: "Luar biasa/Hebat" },
   { pertanyaan: "Apa arti dari 'せまい'?", jawaban: "Sempit" },
@@ -158,5 +158,6 @@ window.soalKuisArti = [
 { pertanyaan: "Apa arti dari 'かちき'?", jawaban: "Tidak mau kalah / Kompetitif" },
 { pertanyaan: "Apa arti dari 'しんけいしつ'?", jawaban: "Sensitif / Mudah khawatir" },
 ];
+
 
 
